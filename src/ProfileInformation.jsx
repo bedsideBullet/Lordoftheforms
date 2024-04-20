@@ -22,7 +22,16 @@ export const ProfileInformation = ({ userData }) => {
     );
   }
   // eslint-disable-next-line no-unused-vars
-  const { email, firstName, lastName, phone: _phone, city } = userData;
+  const { email, firstName, lastName, phoneNumber, city } = userData;
+
+  const phoneDisply =
+    phoneNumber[0] +
+    "-" +
+    phoneNumber[1] +
+    "-" +
+    phoneNumber[2] +
+    "-" +
+    phoneNumber[3];
   return (
     <>
       <u>
@@ -34,7 +43,7 @@ export const ProfileInformation = ({ userData }) => {
         <InfoRow label="Last Name" value={lastName} />
         <InfoRow label="City" value={city} />
         {/* You will need to format the string "nnnnnnn" as "nn-nn-nn-n" */}
-        <InfoRow label="Phone" value={"12-34-56-7"} />
+        <InfoRow label="Phone" value={phoneDisply} />
       </div>
     </>
   );
